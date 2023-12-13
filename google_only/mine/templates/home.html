@@ -12,7 +12,12 @@
         
         {% if user.is_authenticated %}
         <p>You are signed in as {{user.email}}</p>
-        
+        <p>User info: {{ user }}</p>
+        {% if user.profile_pic_url %}
+        <img src="{{ user.profile_pic_url }}" alt="Profile Picture">
+    {% else %}
+        <p>No profile picture available.</p>
+    {% endif %}
         <a href="logout">Logout</a>
         {% endif %}
 
