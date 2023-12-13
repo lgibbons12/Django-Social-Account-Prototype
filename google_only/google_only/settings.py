@@ -59,7 +59,7 @@ SOCIALACCOUNT_PROVIDERS = {
         "AUTH_PARAMS": {"access_type": "online"}
     }
 }
-
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -150,7 +150,7 @@ AUTHENTICATION_BACKENDS = (
     
 )
 
-LOGIN_REDIRECT_URL = "/auth/complete/google-oauth2/"
+LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '188339467567-fgqe3bj50o3l8pfjutdp2mkron82evhv.apps.googleusercontent.com'
