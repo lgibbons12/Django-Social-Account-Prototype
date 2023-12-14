@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    fun_number = models.IntegerField(blank=True)
+    fun_number = models.IntegerField(blank=True, default= 0)
 
     def __str__(self):
         return self.user.username

@@ -29,7 +29,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-SITE_ID = 2
+#SITE_ID = 1
 
 
 
@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
+    #'django.contrib.sites',
     "allauth",
     'allauth.account',
     'allauth.socialaccount',
@@ -59,6 +59,10 @@ SOCIALACCOUNT_PROVIDERS = {
         "AUTH_PARAMS": {"access_type": "online"}
     }
 }
+SOCIALACCOUNT_PIPELINE = (
+    'allauth.socialaccount.pipeline.social.social_account',
+    # ... other pipeline steps ...
+)
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -150,7 +154,7 @@ AUTHENTICATION_BACKENDS = (
     
 )
 
-LOGIN_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "landing/"
 LOGOUT_REDIRECT_URL = "/"
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '188339467567-fgqe3bj50o3l8pfjutdp2mkron82evhv.apps.googleusercontent.com'
